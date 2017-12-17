@@ -14,7 +14,7 @@ export default class About extends React.Component {
             source={require('../images/icon.png')}
           />
           <Text style={styles.appName}>应用名称</Text>
-          <Text style={styles.appVersion}>v1.0.0</Text>
+          <Text style={styles.appVersion}>v{this.props.version}</Text>
         </View>
 
         <View style={styles.bottomContainer}>

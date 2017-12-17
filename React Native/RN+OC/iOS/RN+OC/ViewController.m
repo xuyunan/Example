@@ -23,18 +23,18 @@
 
 - (IBAction)gotoRNPage:(id)sender
 {
-    NSURL *jsCodeLocation = [NSURL URLWithString:@"http://localhost:8081/pages/about.bundle?platform=ios"];
+    NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
     
+    NSURL *jsCodeLocation = [NSURL URLWithString:@"http://localhost:8081/pages/about.bundle?platform=ios"];
     RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL: jsCodeLocation
                                                         moduleName: @"About"
-                                                 initialProperties: @{@"version": @"1.0.2"}
+                                                 initialProperties: @{@"version": version}
                                                      launchOptions: nil];
     UIViewController *vc = [[UIViewController alloc] init];
     vc.title = @"关于";
     vc.view = rootView;
     
     [self.navigationController pushViewController:vc animated:YES];
-    // [self presentViewController:vc animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning
