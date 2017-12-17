@@ -10,6 +10,15 @@
 [![npm](https://img.shields.io/badge/npm-v4.6.1-orange.svg)]()
 [![react-native](https://img.shields.io/badge/RN-v0.51.0-orange.svg)]()
 
+#### 如何运行
+
+1. 切换到该项目目录
+2. npm install
+3. npm start
+4. cd iOS
+5. pod install
+6. 用Xcode打开.xcworkspace文件运行
+
 #### 一些命令
 
 1. https://nodejs.org/
