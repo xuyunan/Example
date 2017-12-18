@@ -29,6 +29,17 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+- (IBAction)sendMessageToRN:(id)sender
+{
+    RNViewController *vc = [[RNViewController alloc] init];
+    vc.title = @"RN调用OC示例";
+    [self.navigationController pushViewController:vc animated:YES];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+       [[NSNotificationCenter defaultCenter] postNotificationName:@"EventReminder" object:nil userInfo:@{@"name": @"您有一条新消息"}];
+    });
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

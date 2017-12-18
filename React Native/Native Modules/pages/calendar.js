@@ -1,8 +1,37 @@
 
 import React from 'react';
-import { StyleSheet, Text, View, TouchableHighlight, AppRegistry, NativeModules } from 'react-native';
+import { StyleSheet, Text, View, TouchableHighlight, AppRegistry, NativeModules, NativeEventEmitter } from 'react-native';
+
+const { CalendarManager } = NativeModules;
+
+const calendarManagerEmitter = new NativeEventEmitter(CalendarManager);
+
+// 注册事件
+const subscription = calendarManagerEmitter.addListener(
+  'EventReminder',
+  (reminder) => console.log(reminder.name)
+)
+
+// const subscription = calendarManagerEmitter.addListener(
+//   'EventReminder',
+//   (reminder) => this.setState({message: reminder.name})
+// )
 
 export default class Calendar extends React.Component {
+   
+  constructor(props) {
+    super(props);
+  
+    this.state = {
+      events: "", 
+      message: ""
+    }
+  }
+
+  componentWillUnmount() {
+    // 移除注册的事件
+    subscription.remove()
+  }
 
   render() {
     return ( 
@@ -15,6 +44,20 @@ export default class Calendar extends React.Component {
         </TouchableHighlight>
 
         <View style={styles.fullWithLine} />
+
+        <TouchableHighlight 
+          underlayColor='#EAECEE'
+          onPress={() => this._showEvents()}>
+          <Text style={styles.item}>获取事件列表</Text>
+        </TouchableHighlight>
+
+        <View style={styles.fullWithLine} />
+
+
+        <Text style={styles.content}>{this.state.events}</Text>
+
+        {/* <Text style={styles.content}>{this.state.message}</Text> */}
+
       </View>
     );
   }
@@ -23,15 +66,27 @@ export default class Calendar extends React.Component {
 
     var date = new Date('2018/12/12 20:30:00')
 
-    var CalendarManager = NativeModules.CalendarManager
+    var calendarManager = NativeModules.CalendarManager
     
-    CalendarManager.addEvent('生日聚会', {
+    calendarManager.addEvent('生日聚会', {
       location: "淞南公园羊蝎子火锅店",
       time: date.getTime(),
       description: "可能下雨，注意带伞"
     })
 
-    console.log(CalendarManager.firstDayOfTheWeek);
+    console.log(calendarManager.firstDayOfTheWeek);
+  }
+
+  async _showEvents() {
+    try {
+      var calendarManager = NativeModules.CalendarManager
+      var events = await calendarManager.findEvents()
+      var eventsString = events.join('|')
+
+      this.setState({events: '调用原生, 返回数据:' + eventsString})
+    } catch (e) {
+      console.error(e);
+    }
   }
 }
 
@@ -42,7 +97,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF',
     alignItems: 'stretch',
     justifyContent: 'flex-start',
-    marginTop: 40,
+    marginTop: 50,
   },
   item: {
     color: '#212121',
@@ -50,6 +105,13 @@ const styles = StyleSheet.create({
     height: 50,
     lineHeight: 50,
     textAlign: 'center',
+  },
+  content: {
+    color: '#212121',
+    fontSize: 16,
+    height: 50,
+    textAlign: 'center',
+    marginTop: 50,
   },
   fullWithLine: {
     backgroundColor: '#E0E0E0',
