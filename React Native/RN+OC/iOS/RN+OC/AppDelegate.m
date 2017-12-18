@@ -3,7 +3,7 @@
 //  RN+OC
 //
 //  Created by Yunan Xu on 17/12/2017.
-//  Copyright © 2017 Yunan Xu. All rights reserved.
+//  Copyright © 2017 xuyunan0113@gmail.com. All rights reserved.
 //
 
 #import "AppDelegate.h"

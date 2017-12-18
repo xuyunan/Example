@@ -3,11 +3,12 @@
 //  RN+OC
 //
 //  Created by Yunan Xu on 17/12/2017.
-//  Copyright © 2017 Yunan Xu. All rights reserved.
+//  Copyright © 2017 xuyunan0113@gmail.com. All rights reserved.
 //
 
 #import "ViewController.h"
 #import <React/RCTRootView.h>
+#import "RNViewController.h"
 
 @interface ViewController ()
 
@@ -18,7 +19,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    self.navigationController.view.backgroundColor = [UIColor whiteColor];
 }
 
 - (IBAction)gotoRNPage:(id)sender
@@ -34,6 +35,13 @@
     vc.title = @"关于";
     vc.view = rootView;
     
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (IBAction)gotoCommunicationPage:(id)sender
+{
+    RNViewController *vc = [[RNViewController alloc] init];
+    vc.title = @"RN调用OC示例";
     [self.navigationController pushViewController:vc animated:YES];
 }
 
