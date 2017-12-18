@@ -33,7 +33,9 @@
 
 ---
 
-*0.0.2* - 展示了原生组件如何往RN页面传递参数, RN页面如何接收参数 [communication-ios](https://facebook.github.io/react-native/docs/communication-ios.html)
+#### 历史版本
+
+*0.0.2* - 展示了原生组件如何往RN页面传递参数, RN页面如何接收参数 [communication-ios](https://facebook.github.io/react-native/docs/communication-ios.html)   
 *0.0.3* - RN调用OC示例 [中文链接](http://reactnative.cn/docs/0.51/native-component-ios.html) [英文链接](https://facebook.github.io/react-native/docs/native-modules-ios.html)
 
 
