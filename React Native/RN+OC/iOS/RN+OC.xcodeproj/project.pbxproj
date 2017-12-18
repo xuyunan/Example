@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		653BF6911FE770DF00586D2D /* CalendarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 653BF6901FE770DF00586D2D /* CalendarManager.m */; };
-		653BF6971FE77C0700586D2D /* RNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 653BF6961FE77C0700586D2D /* RNViewController.m */; };
 		658E1D1A1FE5828A000DBDC8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 658E1D191FE5828A000DBDC8 /* AppDelegate.m */; };
 		658E1D1D1FE5828A000DBDC8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 658E1D1C1FE5828A000DBDC8 /* ViewController.m */; };
 		658E1D201FE5828A000DBDC8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 658E1D1E1FE5828A000DBDC8 /* Main.storyboard */; };
@@ -23,10 +21,6 @@
 		3FC1F8558026149FDD2A9E8D /* libPods-RN+OC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RN+OC.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		40611DE137C88ACE4056D86E /* Pods-RN+OC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RN+OC.release.xcconfig"; path = "Pods/Target Support Files/Pods-RN+OC/Pods-RN+OC.release.xcconfig"; sourceTree = "<group>"; };
 		60FF08258B2C3955DEBB36CA /* Pods-RN+OC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RN+OC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RN+OC/Pods-RN+OC.debug.xcconfig"; sourceTree = "<group>"; };
-		653BF68F1FE770DF00586D2D /* CalendarManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalendarManager.h; sourceTree = "<group>"; };
-		653BF6901FE770DF00586D2D /* CalendarManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalendarManager.m; sourceTree = "<group>"; };
-		653BF6951FE77C0700586D2D /* RNViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNViewController.h; sourceTree = "<group>"; };
-		653BF6961FE77C0700586D2D /* RNViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNViewController.m; sourceTree = "<group>"; };
 		658E1D151FE5828A000DBDC8 /* RN+OC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RN+OC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		658E1D181FE5828A000DBDC8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		658E1D191FE5828A000DBDC8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -52,23 +46,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		653BF68E1FE770AE00586D2D /* RN */ = {
-			isa = PBXGroup;
-			children = (
-				653BF68F1FE770DF00586D2D /* CalendarManager.h */,
-				653BF6901FE770DF00586D2D /* CalendarManager.m */,
-				653BF6951FE77C0700586D2D /* RNViewController.h */,
-				653BF6961FE77C0700586D2D /* RNViewController.m */,
-			);
-			path = RN;
-			sourceTree = "<group>";
-		};
 		658E1D0C1FE5828A000DBDC8 = {
 			isa = PBXGroup;
 			children = (
 				658E1D2E1FE591AD000DBDC8 /* Default-568h@2x.png */,
 				658E1D171FE5828A000DBDC8 /* RN+OC */,
-				653BF68E1FE770AE00586D2D /* RN */,
 				658E1D161FE5828A000DBDC8 /* Products */,
 				7C6BF6CA66AA8E6105D1C446 /* Pods */,
 				FB6C587B82932ACB1802340E /* Frameworks */,
@@ -242,9 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				653BF6971FE77C0700586D2D /* RNViewController.m in Sources */,
 				658E1D1D1FE5828A000DBDC8 /* ViewController.m in Sources */,
-				653BF6911FE770DF00586D2D /* CalendarManager.m in Sources */,
 				658E1D281FE5828A000DBDC8 /* main.m in Sources */,
 				658E1D1A1FE5828A000DBDC8 /* AppDelegate.m in Sources */,
 			);

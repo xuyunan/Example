@@ -8,7 +8,6 @@
 
 #import "ViewController.h"
 #import <React/RCTRootView.h>
-#import "RNViewController.h"
 
 @interface ViewController ()
 
@@ -35,13 +34,6 @@
     vc.title = @"关于";
     vc.view = rootView;
     
-    [self.navigationController pushViewController:vc animated:YES];
-}
-
-- (IBAction)gotoCommunicationPage:(id)sender
-{
-    RNViewController *vc = [[RNViewController alloc] init];
-    vc.title = @"RN调用OC示例";
     [self.navigationController pushViewController:vc animated:YES];
 }
 

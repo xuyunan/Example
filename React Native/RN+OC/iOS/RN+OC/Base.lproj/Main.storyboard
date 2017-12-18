@@ -29,26 +29,12 @@
                                     <action selector="gotoRNPage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JDV-O8-kzs"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1X5-OY-SjP">
-                                <rect key="frame" x="16" y="254" width="343" height="50"/>
-                                <color key="backgroundColor" red="1" green="0.93939732139999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="HKb-jb-TeU"/>
-                                </constraints>
-                                <state key="normal" title="RN调用OC示例"/>
-                                <connections>
-                                    <action selector="gotoCommunicationPage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hCg-FS-Qex"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="D1g-3l-7Us" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Sl8-9W-4zb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="D1g-3l-7Us" secondAttribute="trailing" constant="16" id="TBu-Pr-y2w"/>
                             <constraint firstItem="D1g-3l-7Us" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="UYj-G2-luE"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1X5-OY-SjP" secondAttribute="trailing" constant="16" id="lJx-un-bPp"/>
-                            <constraint firstItem="1X5-OY-SjP" firstAttribute="top" secondItem="D1g-3l-7Us" secondAttribute="bottom" constant="40" id="mAR-Sm-9K7"/>
-                            <constraint firstItem="1X5-OY-SjP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="pV6-6S-5Dk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
