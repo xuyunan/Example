@@ -11,6 +11,9 @@
 #import <React/RCTConvert.h>
 
 @implementation CalendarManager
+{
+    bool hasListeners;
+}
 
 - (instancetype)init
 {
@@ -25,6 +28,8 @@
 }
 
 RCT_EXPORT_MODULE();
+
+#pragma mark - 给RN调用的方法
 
 RCT_EXPORT_METHOD(addEvent:(NSString *)name params:(NSDictionary *)params)
 {
@@ -54,17 +59,37 @@ RCT_REMAP_METHOD(findEvents, findEventsWithResolver:(RCTPromiseResolveBlock)reso
     }
 }
 
+#pragma mark - 向RN发送消息
+
 // 支持的通知事件，写在这里
 - (NSArray<NSString *> *)supportedEvents
 {
     return @[@"EventReminder"];
 }
 
+// Will be called when this module's first listener is added.
+-(void)startObserving
+{
+    hasListeners = YES;
+    // Set up any upstream listeners or background tasks as necessary
+}
+
+// Will be called when this module's last listener is removed, or on dealloc.
+-(void)stopObserving
+{
+    hasListeners = NO;
+    // Remove upstream listeners, stop unnecessary background tasks
+}
+
 - (void)calendarEventReminderReceived:(NSNotification *)notification
 {
     NSString *eventName = notification.userInfo[@"name"];
-    [self sendEventWithName:@"EventReminder" body:@{@"name": eventName}];
+    if (hasListeners) { // Only send events if anyone is listening
+        [self sendEventWithName:@"EventReminder" body:@{@"name": eventName}];
+    }
 }
+
+#pragma mark - CONSTANTS
 
 // 给RN用的常量 (CalendarManager.firstDayOfTheWeek)
 - (NSDictionary *)constantsToExport

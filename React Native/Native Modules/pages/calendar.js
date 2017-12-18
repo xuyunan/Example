@@ -4,21 +4,10 @@ import { StyleSheet, Text, View, TouchableHighlight, AppRegistry, NativeModules,
 
 const { CalendarManager } = NativeModules;
 
-const calendarManagerEmitter = new NativeEventEmitter(CalendarManager);
-
-// 注册事件
-const subscription = calendarManagerEmitter.addListener(
-  'EventReminder',
-  (reminder) => console.log(reminder.name)
-)
-
-// const subscription = calendarManagerEmitter.addListener(
-//   'EventReminder',
-//   (reminder) => this.setState({message: reminder.name})
-// )
-
 export default class Calendar extends React.Component {
    
+  subscription
+
   constructor(props) {
     super(props);
   
@@ -28,9 +17,16 @@ export default class Calendar extends React.Component {
     }
   }
 
+  componentDidMount() {
+    const calendarManagerEmitter = new NativeEventEmitter(CalendarManager);
+    subscription = calendarManagerEmitter.addListener(
+      'EventReminder',
+      (reminder) => this.setState({message: reminder.name})
+    )
+  }
+
   componentWillUnmount() {
-    // 移除注册的事件
-    subscription.remove()
+    subscription.remove()   // 移除注册的事件
   }
 
   render() {
@@ -56,7 +52,7 @@ export default class Calendar extends React.Component {
 
         <Text style={styles.content}>{this.state.events}</Text>
 
-        {/* <Text style={styles.content}>{this.state.message}</Text> */}
+        <Text style={styles.content}>{this.state.message}</Text>
 
       </View>
     );
