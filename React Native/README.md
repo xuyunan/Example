@@ -23,4 +23,5 @@
 
 * **AwesomeProject** - 使用[create-react-native-app](https://facebook.github.io/react-native/docs/getting-started.html)创建的一个RN demo   
 * **RN+OC** - 展示React Native和原生(Objective-c)的结合, 原生组件如何往RN页面传递参数, RN页面如何接收参数 [communication-ios](https://facebook.github.io/react-native/docs/communication-ios.html)   
+* **Native Modules** - RN调用原生方法 [中文链接](http://reactnative.cn/docs/0.51/native-modules-ios.html) | [英文链接](https://facebook.github.io/react-native/docs/native-modules-ios.html)
 
