@@ -10,7 +10,7 @@ import {
 export default class Login extends Component {
 
   register() {
-    Actions.push('register')
+    Actions.push('register', {'phone': '155xxxx9413'})
   }
 
   render() {

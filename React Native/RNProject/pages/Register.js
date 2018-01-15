@@ -9,8 +9,13 @@ import {
 
 export default class Register extends Component {
 
+  constructor(props) {
+    super(props)
+    console.log('phone: ' + props.phone)
+  }
+
   back() {
-    Actions.pop()
+    Actions.push('register', {'phone': '155xxxx9413'})
   }
 
   render() {
