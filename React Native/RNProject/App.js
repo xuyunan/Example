@@ -30,7 +30,7 @@ export default class App extends Component {
 
     const scenes = Actions.create(
       <Scene key="root">
-        <Scene key="login" component={Login} title="登录"/>
+        <Scene key="login" component={Login} title="登录" hideNavBar={true}/>
         <Scene key="register" component={Register} title="注册"/>
       </Scene>
     )

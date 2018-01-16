@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Actions } from 'react-native-router-flux';
+import NavBar from '../components/NavBar';
+import YNButton from '../components/YNButton';
 import {
   StyleSheet,
   Text,
@@ -9,14 +11,29 @@ import {
 
 export default class Login extends Component {
 
-  register() {
+  // 导航左侧按钮
+  leftNavBarBtnClicked() {
+    console.log('rightNavBarBtnClicked')
+  }
+
+  // 导航右侧按钮
+  rightNavBarBtnClicked() {
     Actions.push('register', {'phone': '155xxxx9413'})
   }
 
   render() {
     return (
       <View style={styles.container}>
-        <Button title='register' onPress={this.register}/>
+        <NavBar 
+          title={this.props.title} 
+          left='返回' 
+          right='注册'
+          leftNavBarBtnClicked={this.leftNavBarBtnClicked}
+          rightNavBarBtnClicked={this.rightNavBarBtnClicked}/>
+
+          <View style={styles.content}>
+            <YNButton title='确认支付'/>
+          </View>
       </View>
     );
   }
@@ -24,9 +41,10 @@ export default class Login extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    height: '100%',
+    backgroundColor: '#FFFFFF',
+  },
+  content: {
+    margin: 30,
   }
 });

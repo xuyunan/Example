@@ -15,7 +15,7 @@ export default class Register extends Component {
   }
 
   back() {
-    Actions.push('register', {'phone': '155xxxx9413'})
+    Actions.pop()
   }
 
   render() {
